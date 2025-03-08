@@ -15,7 +15,7 @@ function update() {
 function draw() {
     context.fillStyle = 'red';
     context.clearRect(0, 0, canvas.width, canvas.height);
-    data.balls.forEach(function (ball, i) {
+    data.balls.forEach(function (ball) {
         ball.draw();
     });
 }
@@ -61,28 +61,7 @@ function random(min, max) {
     return Math.floor(Math.random() * (max- min)) + min;
 }
 
-btn.addEventListener("click", (event) => {
+btn.addEventListener("click", () => {
     const ball = new Ball();
     data.balls.push(ball);
 });
-
-
-// const printName = function () {
-//     alert(this.name);
-// }
-//
-// const user = {
-//     name: 'Mher'
-// }
-//
-// Object.prototype.bind2 = function(context) {
-//     const that = this;
-//
-//     return function (...args) {
-//         return that.apply(context, args);
-//     }
-// }
-//
-// const f = printName.bind2(user);
-//
-// f(5, 4, "asd");
